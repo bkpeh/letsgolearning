@@ -17,4 +17,15 @@ func main() {
 			fmt.Println("Index: ", ii, ", Value: ", vv)
 		}
 	}
+
+	delete(x, "bk")
+	fmt.Println("deleting.......")
+
+	for i, v := range x {
+		fmt.Println("For ", i)
+		for ii, vv := range v {
+			fmt.Println("Index: ", ii, ", Value: ", vv)
+		}
+	}
+
 }
