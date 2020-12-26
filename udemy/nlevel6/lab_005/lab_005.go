@@ -11,17 +11,26 @@ type CIRCLE struct {
 	radius int
 }
 
-func (sq SQUARE) area() int {
-	return sq.length * sq.width
+func (sq SQUARE) area() float64 {
+	return float64(sq.length) * float64(sq.width)
 }
 
 func (ci CIRCLE) area() float64 {
-	return 3.142 * ci.radius * 2
+	return 3.142 * float64(ci.radius) * 2.0
+}
+
+type SHAPE interface {
+	area() float64
 }
 
 func main() {
-	x := []int{42, 43, 44, 45, 46, 47, 48, 49, 50, 51}
+	sq := SQUARE{2, 3}
+	ci := CIRCLE{3}
 
-	x = append(x[:3], x[6:]...)
-	fmt.Println(x)
+	INFO(sq)
+	INFO(ci)
+}
+
+func INFO(s SHAPE) {
+	fmt.Println(s.area())
 }

@@ -3,18 +3,13 @@ package main
 import "fmt"
 
 func main() {
-	jb := []string{`Shaken, not stirred`, `Martinis`, `Women`}
-	mp := []string{`James Bond`, `Literature`, `Computer Science`}
-	no := []string{`Being evil`, `Ice cream`, `Sunsets`}
+	ff("Hello", "World", ss)
+}
 
-	x := map[string][]string{"bond_james": jb, "moneypenny_miss": mp, "no_dr": no}
+func ss(s1 string, s2 string) {
+	fmt.Println(s1, s2)
+}
 
-	x["bk"] = []string{"Time", "money", "wife"}
-
-	for i, v := range x {
-		fmt.Println("For ", i)
-		for ii, vv := range v {
-			fmt.Println("Index: ", ii, ", Value: ", vv)
-		}
-	}
+func ff(s1 string, s2 string, f func(s3 string, s4 string)) {
+	f(s1, s2)
 }
